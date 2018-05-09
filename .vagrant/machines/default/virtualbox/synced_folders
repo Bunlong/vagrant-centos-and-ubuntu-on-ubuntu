@@ -1,1 +1,1 @@
-{"rsync":{"/vagrant":{"type":"rsync","guestpath":"/vagrant","hostpath":"/home/bunlong/vagrant-centos7","disabled":false,"__vagrantfile":true,"owner":"vagrant","group":"vagrant"}}}
+{"rsync":{"/vagrant":{"type":"rsync","guestpath":"/vagrant","hostpath":"/home/bunlong/vagrant-centos7","disabled":false,"__vagrantfile":true,"owner":"vagrant","group":"vagrant"}},"virtualbox":{"/var/www/html":{"guestpath":"/var/www/html","hostpath":"/home/bunlong/vagrant-centos7/src","disabled":false,"__vagrantfile":true}}}

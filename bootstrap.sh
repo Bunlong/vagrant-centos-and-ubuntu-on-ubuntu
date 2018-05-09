@@ -3,6 +3,7 @@ echo "---------------- Starting update system ----------------"
 sudo yum update -y
 echo "--------------------------------------------------------"
 
+sudo yum install -y wget
 
 # install git
 echo "---------------- Starting install git ----------------"
@@ -26,3 +27,11 @@ sudo yum-config-manager --enable remi-php72 -y
 sudo yum install -y php php-mcrypt php-cli php-gd php-curl php-mysql php-ldap php-zip php-fileinfo php-mysqlnd php-pdo
 sudo systemctl restart httpd.service
 echo "----------------------------------------------------------"
+
+# install mysql
+echo "---------------- Starting install mysql ----------------"
+sudo yum install -y mariadb-server mariadb
+sudo systemctl start mariadb.service
+sudo systemctl enable mariadb.service
+sudo systemctl restart httpd.service
+echo "------------------------------------------------"
