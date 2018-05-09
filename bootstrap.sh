@@ -34,4 +34,9 @@ sudo yum install -y mariadb-server mariadb
 sudo systemctl start mariadb.service
 sudo systemctl enable mariadb.service
 sudo systemctl restart httpd.service
-echo "------------------------------------------------"
+echo "--------------------------------------------------------"
+
+echo "---------------- Starting install composer ----------------"
+sudo curl -sS https://getcomposer.org/installer | php
+sudo mv composer.phar /usr/local/bin/composer
+echo "-----------------------------------------------------------"
