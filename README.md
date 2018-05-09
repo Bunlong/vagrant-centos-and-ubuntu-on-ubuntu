@@ -30,3 +30,33 @@ Oracle VM VirtualBox Manager 5.2.6
 $ vagrant -v
 Vagrant 2.0.2
 ```
+
+### Create first Ubuntu-based VirtualBox using Vagrant
+
+This is actually and latest version of Ubuntu.
+
+```
+$ mkdir ubuntu
+$ cd ubuntu
+$ vagrant init ubuntu/xenial64
+$ vagrant up
+$ vagrant ssh
+```
+
+That's it. I am inside the Virtualbox.
+
+In order to have everything up to date I also ran:
+
+```
+$ sudo apt-get update
+$ sudo apt-get upgrade
+```
+
+I can exit it using exit and then I can shut down the VirtualBox by running
+
+```
+$ vagrant halt
+```
+
+Note: The intit command created a file called Vagrantfile that contains the configuration of the Vagrant image.
+
