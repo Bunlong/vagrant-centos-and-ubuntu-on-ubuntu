@@ -17,3 +17,16 @@ Download the .deb file for Debian from [Vagrant downloads](https://www.vagrantup
 ```
 sudo apt install ./vagrant_2.0.2_x86_64.deb
 ```
+
+### Verify the installed versions
+
+```
+$ virtualbox -h
+Oracle VM VirtualBox Manager 5.2.6
+...
+```
+
+```
+$ vagrant -v
+Vagrant 2.0.2
+```
