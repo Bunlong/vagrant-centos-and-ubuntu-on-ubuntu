@@ -1,4 +1,4 @@
-# Vagrant Centos on Ubuntu
+# Vagrant Centos/Ubuntu on Ubuntu
 
 ### Install VirtualBox
 
