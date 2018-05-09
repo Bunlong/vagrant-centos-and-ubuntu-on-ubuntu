@@ -31,7 +31,7 @@ $ vagrant -v
 Vagrant 2.0.2
 ```
 
-### Create first Ubuntu-based VirtualBox using Vagrant
+### Create Ubuntu-based VirtualBox using Vagrant
 
 This is actually and latest version of Ubuntu.
 
@@ -60,3 +60,22 @@ $ vagrant halt
 
 Note: The intit command created a file called Vagrantfile that contains the configuration of the Vagrant image.
 
+### Create Centos/7 VirtualBox using Vagrant
+
+Just to further my experiments I've also created a separate VirtualBox using CentOS 7.
+
+For this I created a second directory as we'll need a separate Vagrantfile.
+
+```
+$ mkdir centos
+$ cd centos
+$ vagrant init centos/7
+$ vagrant up
+$ vagrant ssh
+```
+
+We can update it to the latest pacakges using:
+
+```
+$ yum update
+```
