@@ -44,9 +44,36 @@ sudo curl -sS https://getcomposer.org/installer | php
 sudo mv composer.phar /usr/local/bin/composer
 echo "-----------------------------------------------------------"
 
-echo "---------------- Starting configure apache2 to laravel project ----------------"
+# disable security in centos 
+echo "---------------- Starting disable centos security ----------------"
+SELINUX=$(cat <<EOF
+SELINUX=disabled
+SELINUXTYPE=targeted
+EOF
+)
+echo "${SELINUX}" > /etc/sysconfig/selinux
+echo "------------------------------------------------------------------"
 
+echo "---------------- Starting configure apache2 with laravel project ----------------"
+cat > /etc/httpd/conf.d/vhost.conf <<- "EOF"
+  <VirtualHost *:80>
+    DocumentRoot /var/www/html/my-pro/public
+
+    <Directory "/var/www/html/my-pro/public">
+      Order allow,deny
+      Allow from all
+      Options Indexes FollowSymLinks
+      AllowOverride All
+      Require all granted
+    </Directory>
+  </VirtualHost>
+  
+  User vagrant
+  Group vagrant
+EOF
+
+# config laravel permission
+sudo chown -R apache:apache /var/www/html/my-pro
+sudo chmod -R 777 /var/www/html/my-pro/storage
+sudo systemctl restart httpd
 echo "-------------------------------------------------------------------------------"
-
-# https://www.hugeserver.com/kb/install-laravel5-php7-apache-centos7/
-# https://gist.github.com/rosswd/b9f1c2d1215e5f55c685
