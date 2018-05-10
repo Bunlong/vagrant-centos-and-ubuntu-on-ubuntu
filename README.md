@@ -79,3 +79,25 @@ We can update it to the latest pacakges using:
 ```
 $ yum update
 ```
+
+### Install LAMP
+
+Well, we can install LAMP to the latest stable version:
+
+```
+$ vagrant provision
+```
+
+Then we can turn on the vagrant virtual machine:
+
+```
+$ vagrant up
+```
+
+So far so good, we can ssh into the vagrant virtual machine:
+
+```
+$ vagrant up
+```
+
+For any questions please feel free to ask me :) Thanks!
